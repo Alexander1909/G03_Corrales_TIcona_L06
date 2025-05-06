@@ -6,4 +6,4 @@ public interface Stack<E> {
     E top() throws ExceptionIsEmpty;
     boolean isEmpty();
     } 
-    
+        
