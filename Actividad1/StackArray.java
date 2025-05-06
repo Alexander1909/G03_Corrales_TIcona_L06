@@ -26,3 +26,18 @@ class StackArray<E> implements Stack<E> {
         tope--;
         return elemento;
     }
+    public E top() throws ExceptionIsEmpty {
+        if (isEmpty()) {
+            throw new ExceptionIsEmpty("La pila está vacía.");
+        }
+        return array[tope];
+    }
+
+    public boolean isEmpty() {
+        return tope == -1;
+    }
+
+    public boolean isFull() {
+        return tope == array.length - 1;
+    }
+    
