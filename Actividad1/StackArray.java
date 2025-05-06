@@ -40,4 +40,12 @@ class StackArray<E> implements Stack<E> {
     public boolean isFull() {
         return tope == array.length - 1;
     }
-    
+    public String toString() {
+        if (isEmpty()) return "Pila vacía";
+        String resultado = "Cima -> ";
+        for (int i = tope; i >= 0; i--) {
+            resultado += array[i] + " ";
+        }
+        return resultado;
+    }
+}
