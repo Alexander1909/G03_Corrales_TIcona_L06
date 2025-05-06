@@ -19,4 +19,15 @@ public class Test {
             System.out.println("Cima: " + pilaCadenas.top());
             pilaCadenas.pop();
             System.out.println("Después de pop: " + pilaCadenas);
-        
+            // Pila vacía
+            Stack<Double> pilaVacia = new StackArray<>(2);
+            System.out.println("\n¿Está vacía la pila de doubles?: " + pilaVacia.isEmpty());
+            pilaVacia.push(3.14);
+            pilaVacia.pop();
+            System.out.println("¿Está vacía después de pop?: " + pilaVacia.isEmpty());
+
+        } catch (ExceptionIsEmpty e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
