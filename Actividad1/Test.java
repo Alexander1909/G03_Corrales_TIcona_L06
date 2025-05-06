@@ -11,3 +11,12 @@ public class Test {
             System.out.println("Cima: " + pilaEnteros.top());
             System.out.println("Eliminando: " + pilaEnteros.pop());
             System.out.println("Pila actual: " + pilaEnteros);
+            // Pila de cadenas
+            Stack<String> pilaCadenas = new StackArray<>(3);
+            pilaCadenas.push("Hola");
+            pilaCadenas.push("Mundo");
+            System.out.println("\nPila de cadenas: " + pilaCadenas);
+            System.out.println("Cima: " + pilaCadenas.top());
+            pilaCadenas.pop();
+            System.out.println("Después de pop: " + pilaCadenas);
+        
