@@ -36,3 +36,20 @@ public void enqueue(E x, N pr) {
             if (newNode.getNext() == null) last = newNode;
         }
     }
+    public E dequeue() throws ExceptionIsEmpty {
+        if (isEmpty()) throw new ExceptionIsEmpty("Queue is empty");
+        E data = first.getData().data;
+        first = first.getNext();
+        if (first == null) last = null;
+        return data;
+    }
+
+    public E front() throws ExceptionIsEmpty {
+        if (isEmpty()) throw new ExceptionIsEmpty("Queue is empty");
+        return first.getData().data;
+    }
+
+    public E back() throws ExceptionIsEmpty {
+        if (isEmpty()) throw new ExceptionIsEmpty("Queue is empty");
+        return last.getData().data;
+    }
