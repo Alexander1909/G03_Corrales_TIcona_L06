@@ -1,0 +1,25 @@
+package ejercicio1;
+public class StackLink<E> implements Stack<E> {
+    private Node<E> top;
+
+    public StackLink() {
+        top = null;
+    }
+
+    public void push(E x) {
+        Node<E> node = new Node<>(x);
+        node.setNext(top);
+        top = node;
+    }
+
+    public E pop() throws ExceptionIsEmpty {
+        if (isEmpty()) throw new ExceptionIsEmpty("Stack is empty");
+        E data = top.getData();
+        top = top.getNext();
+        return data;
+    }
+
+    public E top() throws ExceptionIsEmpty {
+        if (isEmpty()) throw new ExceptionIsEmpty("Stack is empty");
+        return top.getData();
+    }
