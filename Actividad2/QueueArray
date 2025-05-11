@@ -17,3 +17,15 @@ public class QueueArray<E> implements Queue<E> {
         array[last] = x;
         count++;
     }
+     public E dequeue() throws ExceptionIsEmpty {
+        if (isEmpty()) throw new ExceptionIsEmpty("Queue is empty");
+        E data = array[first];
+        first = (first + 1) % array.length;
+        count--;
+        return data;
+    }
+
+    public E front() throws ExceptionIsEmpty {
+        if (isEmpty()) throw new ExceptionIsEmpty("Queue is empty");
+        return array[first];
+    }
