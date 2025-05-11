@@ -53,3 +53,17 @@ public void enqueue(E x, N pr) {
         if (isEmpty()) throw new ExceptionIsEmpty("Queue is empty");
         return last.getData().data;
     }
+    public boolean isEmpty() {
+        return first == null;
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder("PriorityQueue: ");
+        Node<EntryNode<E, N>> aux = first;
+        while (aux != null) {
+            sb.append("(").append(aux.getData().data).append(",").append(aux.getData().priority).append(") ");
+            aux = aux.getNext();
+        }
+        return sb.toString();
+    }
+}
