@@ -1,0 +1,42 @@
+package aplicacion;
+
+import ejercicio1.StackLink;
+import ejercicio1.ExceptionIsEmpty;
+
+public class Application {
+    public static boolean symbolBalancing(String s) {
+        StackLink<Character> stack = new StackLink<>();
+        try {
+            for (char c : s.toCharArray()) {
+                if ("({[".indexOf(c) != -1) {
+                    stack.push(c);
+                } else if (")}]".indexOf(c) != -1) {
+                    if (stack.isEmpty()) return false;
+                    char open = stack.pop();
+                    if (!((c == ')' && open == '(') ||
+                          (c == ']' && open == '[') ||
+                          (c == '}' && open == '{'))) {
+                        return false;
+                    }
+                }
+            }
+            return stack.isEmpty();
+        } catch (ExceptionIsEmpty e) {
+            return false;
+        }
+    }
+
+    public static void main(String[] args) {
+        String[] tests = {
+            "()()()[()]()",
+            "((()))[]",
+            "([])[](",
+            "([{)]}",
+            "[",
+            "[][][]{{{}}}"
+        };
+        for (String test : tests) {
+            System.out.println(test + " -> " + symbolBalancing(test));
+        }
+    }
+}
