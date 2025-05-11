@@ -49,3 +49,8 @@ public class Test {
             System.out.println(pqLinked); // P3=Tarea crítica...
             pqLinked.dequeue();
             System.out.println(pqLinked);
+             } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+    }
+}
