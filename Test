@@ -34,3 +34,18 @@ public class Test {
             System.out.println(stackLink); // Stack: Mundo Hola
             stackLink.pop();
             System.out.println(stackLink); // Stack: Hola
+             System.out.println("\n=== ejercicio2 - QueueArray ===");
+            Queue<Integer> queueArray = new QueueArray<>(5);
+            queueArray.enqueue(1); queueArray.enqueue(2); queueArray.enqueue(3);
+            System.out.println(queueArray); // Queue: 1 2 3
+            queueArray.dequeue();
+            System.out.println(queueArray); // Queue: 2 3
+
+            System.out.println("\n=== ejercicio3 - PriorityQueueLinked ===");
+            PriorityQueue<String> pqLinked = new PriorityQueueLinked<>(4); // 0 to 3
+            pqLinked.enqueue("Tarea común", 0);
+            pqLinked.enqueue("Tarea importante", 2);
+            pqLinked.enqueue("Tarea crítica", 3);
+            System.out.println(pqLinked); // P3=Tarea crítica...
+            pqLinked.dequeue();
+            System.out.println(pqLinked);
