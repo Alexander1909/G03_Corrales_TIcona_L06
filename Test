@@ -1,3 +1,20 @@
 import actividad1.*;
 import actividad2.*;
 import actividad3.*;
+
+public class Test {
+    public static void main(String[] args) {
+        try {
+            System.out.println("=== actividad1 - StackArray ===");
+            Stack<Integer> stackArray = new StackArray<>(5);
+            stackArray.push(10); stackArray.push(20); stackArray.push(30);
+            System.out.println(stackArray); // Stack: 30 20 10
+            stackArray.pop();
+            System.out.println(stackArray); // Stack: 20 10
+
+            System.out.println("\n=== actividad2 - QueueLink ===");
+            Queue<String> queueLink = new QueueLink<>();
+            queueLink.enqueue("A"); queueLink.enqueue("B"); queueLink.enqueue("C");
+            System.out.println(queueLink); // Queue: A B C
+            queueLink.dequeue();
+            System.out.println(queueLink); // Queue: B C
