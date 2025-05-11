@@ -18,3 +18,19 @@ public class Test {
             System.out.println(queueLink); // Queue: A B C
             queueLink.dequeue();
             System.out.println(queueLink); // Queue: B C
+            System.out.println("\n=== actividad3 - PriorityQueueLinkSort ===");
+            PriorityQueue<String, Integer> pqSort = new PriorityQueueLinkSort<>();
+            pqSort.enqueue("Urgente", 3);
+            pqSort.enqueue("Media", 2);
+            pqSort.enqueue("Baja", 1);
+            System.out.println(pqSort); // Ordenado por prioridad
+            pqSort.dequeue();
+            System.out.println(pqSort);
+
+            System.out.println("\n=== ejercicio1 - StackLink ===");
+            Stack<String> stackLink = new StackLink<>();
+            stackLink.push("Hola");
+            stackLink.push("Mundo");
+            System.out.println(stackLink); // Stack: Mundo Hola
+            stackLink.pop();
+            System.out.println(stackLink); // Stack: Hola
