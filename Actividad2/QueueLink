@@ -36,3 +36,17 @@ public class QueueLink<E> implements Queue<E> {
         return last.getData();
     }
 
+    public boolean isEmpty() {
+        return first == null;
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Queue: ");
+        Node<E> aux = first;
+        while (aux != null) {
+            sb.append(aux.getData()).append(" ");
+            aux = aux.getNext();
+        }
+        return sb.toString();
+    }
+}
